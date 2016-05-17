@@ -33,6 +33,8 @@
   
   Write your comment
 </p>
+
+<%= render 'comments/form' %>
 <table>
   <thead>
     <tr>
@@ -43,12 +45,14 @@
   </thead>
 
   <tbody>
-    <% @post.comments.reverse_each do |comment| %>
-    <tr>
-    <td><%= comment.author %> </td>
-    <td><%= comment.content %></td>
-    <td><%= time_ago_in_words comment.created_at %> ago</td>
-    </tr>
+    <% @post.comments.reverse.each do |comment| %>
+      <% if !comment.new_record?%>
+        <tr>
+          <td><%= comment.author %> </td>
+          <td><%= comment.content %></td>
+          <td><%= time_ago_in_words comment.created_at %> ago</td>
+        </tr>
+      <% end%>
     <% end %>
   </tbody>
 </table>
