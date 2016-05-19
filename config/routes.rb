@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts do
-    resources :comments 
-  end
+resources :posts do
+  resources :comments, except: [:new]
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   #
   #     collection do
   #       get 'sold'
-  #     end
+  #     endexi
   #   end
 
   # Example resource route with sub-resources:
