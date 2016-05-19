@@ -16,9 +16,9 @@
       <tr>
         <td><%= comment.author %></td>
         <td><%= comment.content %></td>
-        <td><%= link_to 'Show', post_comment_path(@post, comment) %></td>
-        <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
-        <td><%= link_to 'Destroy',[@post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', post_comment_path(@post, comment), class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_post_comment_path(@post, comment), class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Destroy',[@post, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
